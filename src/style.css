@@ -870,3 +870,19 @@ input[type="range"]:active::-webkit-slider-thumb {
 }
 
 /*hello*/
+#mute-btn {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1100;            /* above everything, so it works during the minigames too */
+    font-size: 22px;
+    padding: 8px 14px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    cursor: pointer;
+}
+#mute-btn:hover {
+    background: rgba(41, 2, 2, 0.6);
+}

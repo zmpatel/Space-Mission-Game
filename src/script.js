@@ -45,13 +45,40 @@ function goBack() {
 backBtn.addEventListener('click', goBack);
 backBtn.classList.add('hidden');
 
-document.getElementById('play-btn').addEventListener('click', () => showscreen('role-screen'));
+document.getElementById('play-btn').addEventListener('click', () => {
+    startMusic();
+    showscreen('role-screen')});
 document.getElementById('restart-btn').addEventListener('click', () => showscreen('title-screen'));
 document.getElementById('role-engineer').addEventListener('click', () => showscreen('engineer-page2'));
 document.getElementById('mission1').addEventListener('click', () => showscreen('engineer-miss1'));
 document.getElementById('mission2').addEventListener('click', () => showscreen('engineer-miss2'));
 document.getElementById('mission3').addEventListener('click', () => showscreen('engineer-miss3'));
 
+// =====================================
+// BACKGROUND MUSIC
+// =====================================
+const music = document.getElementById('bg-music');
+const muteBtn = document.getElementById('mute-btn');
+music.volume = 0.3;                                   // 0 to 1; keep it quiet
+let musicMuted = localStorage.getItem('musicMuted') === 'true';
+
+function updateMuteButton() {
+    muteBtn.textContent = musicMuted ? '🚫' : '📢';
+}
+
+function startMusic() {
+    if (!musicMuted) music.play().catch(() => {});    // ignore if the browser still blocks it
+}
+
+muteBtn.addEventListener('click', () => {
+    musicMuted = !musicMuted;
+    localStorage.setItem('musicMuted', musicMuted);   // remembers the choice
+    if (musicMuted) music.pause();
+    else music.play().catch(() => {});
+    updateMuteButton();
+});
+
+updateMuteButton();
 
 // =====================================
 // MISSION SETTINGS
