@@ -10,15 +10,25 @@ body{
 
 
 /* come back to this */
+#engineer-page2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;        
+    align-content: flex-start;
+    gap: 48px;
+    padding: 15px 20px 40px;
+    box-sizing: border-box;
+}
+
 
 #engineer-page2-title{
-    font-size: 40px;
+    position: static;
+    transform:none;
+    flex: 0 0 100%;
+    color:white;
+    font-size: 30px;
     text-align: center;
-    color: white;
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 #mission1{
@@ -26,11 +36,9 @@ body{
     text-align: center;
     color: rgb(247, 249, 250);
     background-color: rgba(0, 0, 0, 0.6);
-    position: absolute;
-    bottom: 0%;
-    left: 50%;
+  
     padding: 10px 20px;
-    transform: translate(-50%, -50%);
+    
     border-radius: 5px;
     cursor: pointer;
 }
@@ -41,13 +49,9 @@ body{
 
 
 
+
 #mission1ex-container {
-    position: absolute;
-    width: 25%;
-    min-height: 60%;
-    top: 55%;
-    left: 20%;
-    transform: translate(-50%, -50%);
+    
 
     box-sizing: border-box;
     padding: 25px 25px 30px;
@@ -62,27 +66,22 @@ body{
 }
 
 .p {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.6;
     margin-bottom: 25px;
     padding: 0;
     color: white;
 }
 .p-statement {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.6;
     margin-top: 0;
     color: white;
+    margin-bottom: 25px;
 }
 
 
 #mission2ex-container {
-    position: absolute;
-    width: 25%;
-    min-height: 60%;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 
     box-sizing: border-box;
     padding: 25px 25px 30px;
@@ -101,22 +100,14 @@ body{
     text-align: center;
     color: rgb(247, 249, 250);
     background-color: rgba(0, 0, 0, 0.6);
-    position: absolute;
-    bottom:0%;
-    left: 50%;
+    
     padding: 10px 20px;
-    transform: translate(-50%, -50%);
+    
     border-radius: 5px;
     cursor: pointer;
 }
 
 #mission3ex-container {
-    position: absolute;
-    width: 25%;
-    min-height: 60%;
-    top: 55%;
-    left: 80%;
-    transform: translate(-50%, -50%);
 
     box-sizing: border-box;
     padding: 25px 25px 30px;
@@ -135,14 +126,32 @@ body{
     text-align: center;
     color: rgb(247, 249, 250);
     background-color: rgba(0, 0, 0, 0.6);
-    position: absolute;
-    bottom:0%;
-    left: 50%;
+
     padding: 10px 20px;
-    transform: translate(-50%, -50%);
+
     border-radius: 5px;
     cursor: pointer;
 }
+
+
+#mission1ex-container, #mission2ex-container, #mission3ex-container {
+    position: relative;
+    top:auto;
+    left:auto;
+    transform:none;
+    flex: 1 1 320px;
+    max-width: 440px;
+    min-height: 0;
+}
+
+#mission1,
+#mission2,
+#mission3 {
+    position: static;
+    transform: none;
+    margin-top: auto;
+}
+
 
 #slider1{
     width: 80%;
