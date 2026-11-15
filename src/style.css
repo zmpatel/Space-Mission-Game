@@ -5,11 +5,10 @@ body{
     background-image: url('./images/PIA03654~orig.jpg'); 
     background-size: cover;
     background-position: center;
-
 }
 
 
-/* come back to this */
+
 #engineer-page2{
     display: flex;
     flex-wrap: wrap;
@@ -46,8 +45,6 @@ body{
 #mission1:hover, #mission2:hover, #mission3:hover {
     background-color: rgba(114, 88, 88, 0.8);
 }
-
-
 
 
 #mission1ex-container {

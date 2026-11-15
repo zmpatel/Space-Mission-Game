@@ -4,7 +4,7 @@
     position: absolute;
     inset: 0;
     overflow: hidden;
-    pointer-events: none;     /* never blocks the buttons underneath */
+    pointer-events: none;    
     z-index: 5;
 }
 

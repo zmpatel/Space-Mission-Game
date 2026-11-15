@@ -1,17 +1,4 @@
 // minigames.js — the Engineer's pre-launch minigames.
-//
-// HOW TO CONNECT IT (for whoever links the screens together):
-//   1. In index.html <head> add:
-//        <link rel="stylesheet" href="minigames.css">
-//        <script src="minigames.js" defer></script>
-//   2. When the player is ready to launch, call:
-//        startEngineerMinigames(1, (success, reason) => {
-//            if (success) { /* show launch / success screen */ }
-//            else         { /* show game over, maybe show `reason` */ }
-//        });
-//      The first number is the mission: 1 = Rescue, 2 = Distance, 3 = Long-term orbit.
-//
-// It builds its own screen on top of the page, so it doesn't need any HTML added.
 
 // Fuel target zone (in % of the tank) for each mission
 const MG_FUEL_ZONES = {
@@ -21,7 +8,7 @@ const MG_FUEL_ZONES = {
 };
 
 const MG_WIRE_COLORS = ['red', 'blue', 'yellow', 'green'];
-const MG_WIRE_TIME = 20;   // seconds to finish the wiring
+const MG_WIRE_TIME = 15;   // seconds to finish the wiring
 const MG_FUEL_TRIES = 3;
 
 // ---------- Main entry point ----------
@@ -41,7 +28,7 @@ function startEngineerMinigames(missionNumber, onDone) {
     });
 }
 
-// ---------- Overlay (the screen the minigames live on) ----------
+// ---------- Overlay (minigame screen) ----------
 function mgBuildOverlay() {
     let overlay = document.getElementById('mg-overlay');
     if (overlay) overlay.remove();               // start fresh if played before
@@ -224,7 +211,7 @@ function mgFuelGame(overlay, missionNumber, done) {
         }
     }
 
-    // mouse + touch so it works on laptops and phones
+    // mouse + touch 
     btn.addEventListener('mousedown', startFill);
     btn.addEventListener('touchstart', startFill);
     btn.addEventListener('mouseup', stopFill);

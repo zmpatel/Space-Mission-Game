@@ -14,10 +14,7 @@ const SHOW_HINTS = true;      // set false for a harder game (no per-slider hint
 // SCREEN NAVIGATION (with back button)
 // =====================================
 // Flow: title-screen → role-screen → engineer-page2 → engineer-miss1/2/3 → launch-result
-//
-// screenHistory remembers the screens the player came from. Going to a screen that is
-// already in the history (Back, "Return to Missions", Restart...) unwinds to it, so the
-// Back button never ends up bouncing between the same two screens.
+
 
 let currentScreen = 'title-screen';
 const screenHistory = [];
@@ -119,7 +116,7 @@ const missionConfigs = {
     }
 };
 
-// Other scripts (engineer-connect.js) read results through this.
+// Other scripts (engineer-connect.js)
 const missionState = {};
 
 
@@ -129,7 +126,7 @@ const missionState = {};
 const norm = (value, [min, max]) => (value - min) / (max - min);
 const clamp01 = x => Math.min(1, Math.max(0, x));
 
-// Where slider i "should" be (0–1), given where the earlier sliders are right now.
+// Slider positioning 
 function idealN(config, i, n) {
     let ideal = norm(config.targets[i], config.ranges[i]);
     const deps = config.deps[i];
@@ -202,7 +199,7 @@ function setupMissionSliders(missionName) {
     const readNorm = () => sliders.map((_, i) => readOne(i));
     const setN = (i, n) => {
         const [min, max] = config.ranges[i];
-        sliders[i].value = min + n * (max - min);   // the browser snaps this to the slider's step
+        sliders[i].value = min + n * (max - min);   
     };
 
     // ---------- cost ----------
@@ -325,7 +322,7 @@ function setupMissionSliders(missionName) {
 
     sliders.forEach((slider, j) => slider.addEventListener("input", () => onSliderMoved(j)));
 
-    // ---------- reset (used by engineer-connect.js) ----------
+    // ---------- reset  ----------
     function reset() {
         finishTween();
         sliders.forEach((s, i) => { s.value = defaults[i]; });

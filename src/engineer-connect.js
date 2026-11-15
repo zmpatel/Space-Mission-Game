@@ -1,5 +1,5 @@
 /*engineer-connect.js*/
-let launchBusy = false;       // stops double-clicking Submit from stacking two minigames
+let launchBusy = false;       
 let resultReturnTo = 'engineer-page2';
 
 
@@ -7,7 +7,7 @@ let resultReturnTo = 'engineer-page2';
 // ROCKET ANIMATION
 // =====================================
 // mode 'fly'     → rocket lifts off and flies out of sight (success)
-// mode 'explode' → rocket lifts off, then blows up part-way (scrubbed design or failed minigame)
+// mode 'explode' → rocket lifts off, then blows up part-way (Failed design or failed minigame)
 
 const ROCKET_SVG = `
     <svg viewBox="0 0 60 120" width="60" height="120" aria-hidden="true">
@@ -20,7 +20,7 @@ const ROCKET_SVG = `
     </svg>
     <div class="rocket-flame"></div>`;
 
-let rocketRun = 0;            // bumps every time we start/stop, so old animations stop themselves
+let rocketRun = 0;            
 
 function clearRocket() {
     rocketRun++;
