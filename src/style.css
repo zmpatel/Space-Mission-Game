@@ -24,7 +24,8 @@ body{
 #mission1{
     font-size: 30px;
     text-align: center;
-    color: rgb(43, 113, 136);
+    color: rgb(247, 249, 250);
+    background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
     bottom: 0%;
     left: 50%;
@@ -32,6 +33,10 @@ body{
     transform: translate(-50%, -50%);
     border-radius: 5px;
     cursor: pointer;
+}
+
+#mission1:hover, #mission2:hover, #mission3:hover {
+    background-color: rgba(114, 88, 88, 0.8);
 }
 
 
@@ -52,21 +57,22 @@ body{
     align-items: center;
 
     text-align: center;
-    background-color: rgb(149, 166, 181);
+    background-color: rgba(75, 5, 5, 0.6);
     border-radius: 20px;
 }
 
 .p {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.6;
     margin-bottom: 25px;
     padding: 0;
+    color: white;
 }
 .p-statement {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.6;
     margin-top: 0;
-    
+    color: white;
 }
 
 
@@ -86,14 +92,15 @@ body{
     align-items: center;
 
     text-align: center;
-    background-color: rgb(149, 166, 181);
+    background-color: rgba(75, 5, 5, 0.6);
     border-radius: 20px;
 }
 
 #mission2{
     font-size: 30px;
     text-align: center;
-    color: rgb(43, 113, 136);
+    color: rgb(247, 249, 250);
+    background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
     bottom:0%;
     left: 50%;
@@ -119,14 +126,15 @@ body{
     align-items: center;
 
     text-align: center;
-    background-color: rgb(149, 166, 181);
+    background-color: rgba(75, 5, 5, 0.6);
     border-radius: 20px;
 }
 
 #mission3{
     font-size: 30px;
     text-align: center;
-    color: rgb(43, 113, 136);
+    color: rgb(247, 249, 250);
+    background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
     bottom:0%;
     left: 50%;
@@ -353,9 +361,6 @@ body{
     border: none;
     cursor: pointer;
 }
-
-
-
 
 
 
@@ -628,7 +633,7 @@ button:disabled {
     box-sizing: border-box;
 }
 
-/* IMPORTANT: hidden screens must actually stay hidden */
+
 .screen.hidden {
     display: none !important;
 }
@@ -670,7 +675,7 @@ button:disabled {
 
 
 
-/* Smooth fade when switching screens (opacity only, so it can't fight existing transforms) */
+/* Smooth fade when switching screens*/
 .screen:not(.hidden) {
     animation: screenFade 0.4s ease;
 }
@@ -735,11 +740,6 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 
 
-/* =================================
-   ADD THIS TO THE VERY END OF style.css
-   (after style-additions.css and rocket-animation.css)
-================================= */
-
 /* ---------- Back button ---------- */
 #back-btn {
     position: fixed;
@@ -749,14 +749,14 @@ input[type="range"]:active::-webkit-slider-thumb {
     font-size: 20px;
     padding: 10px 20px;
     color: white;
-    background: rgba(4, 24, 41, 0.9);
-    border: 2px solid rgb(51, 88, 120);
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.8);
     border-radius: 12px;
     cursor: pointer;
     transition: background 0.2s ease, transform 0.2s ease;
 }
 #back-btn:hover {
-    background: rgb(51, 88, 120);
+    background: rgba(41, 2, 2, 0.6);
     transform: translateX(-3px);
 }
 
@@ -786,16 +786,16 @@ input[type="range"]:active::-webkit-slider-thumb {
     font-size: 40px;
     padding: 14px 70px;
     color: white;
-    background-color: rgb(51, 88, 120);
+    background-color: rgb(56, 5, 6);
     border: none;
     border-radius: 20px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 #play-btn:hover {
-    background-color: rgb(70, 115, 150);
+    background-color: rgb(215, 154, 154);
     transform: scale(1.06);
-    box-shadow: 0 0 25px rgba(120, 180, 255, 0.5);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.744);
 }
 
 /* ---------- Role screen ---------- */
@@ -819,8 +819,8 @@ input[type="range"]:active::-webkit-slider-thumb {
     padding: 26px 18px;
     color: white;
     font-family: inherit;
-    background: rgb(4, 24, 41);
-    border: 2px solid rgb(51, 88, 120);
+    background: rgb(41, 4, 4);
+    border: 2px solid rgb(242, 245, 247);
     border-radius: 20px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
@@ -828,8 +828,8 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .role-card:hover:not(:disabled) {
     transform: translateY(-6px);
-    background: rgb(14, 44, 70);
-    box-shadow: 0 0 25px rgba(120, 180, 255, 0.5);
+    background: rgb(168, 100, 100);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.794);
 }
 
 .role-card:disabled {
